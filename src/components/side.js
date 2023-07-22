@@ -6,7 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import Playlists from './Playlists';
 
-
 function Side() {
   return (
     <div className='sidebar'>

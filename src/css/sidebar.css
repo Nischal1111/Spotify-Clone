@@ -1,0 +1,17 @@
+.sidebar {
+    height: 100vh;
+    background-color: #040404;
+    color: aliceblue;
+    padding: 0px 10px;
+    overflow: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.logo {
+    height: 70px;
+    margin-right: auto;
+    padding: 10px
+}

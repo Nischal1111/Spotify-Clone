@@ -5,7 +5,7 @@ const Login = () => {
     const handleClick = ()=>{
     const autorizeUrl = "https://accounts.spotify.com/authorize"
     const redirect="http://localhost:3000/"
-        const clientid="42f5a3c23a52424384551c81b8177712"
+        const clientid="8aa08ed4a4cd49b5bcc349d264f14955"
 
     const scopes=[
     "user-read-email",

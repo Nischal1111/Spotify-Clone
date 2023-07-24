@@ -36,4 +36,8 @@
 
 .header--right h4 {
     margin-left: 10px;
+    margin-right: 1rem;
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: 200;
 }

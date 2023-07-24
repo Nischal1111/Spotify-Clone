@@ -13,27 +13,18 @@ const Spotify = () => {
     const [{token},dispatch] =useStateProvider()
     useEffect(()=>{
        const getUser = async () => {
-  try {
-    const data = await axios.get('https://api.spotify.com/v1/me', {
+    const {data} = await axios.get('https://api.spotify.com/v1/me/', {
       headers: {
         Authorization: 'Bearer ' + token,
         'Content-Type': 'application/json',
       },
     });
-
-    console.log('Spotify API Response:', data); // Log the entire data object
-
-    const userInfo = {
-      userId: data.id,
-      userName: data.display_name,
-    };
-
-    console.log('User Info:', userInfo); // Log the user info
-
-    dispatch({ type: reducerCases.SET_USER, userInfo });
-  } catch (error) {
-    console.error('Error fetching user data:', error);
-  }
+        const user= {
+        name : data?.display_name,
+        id:data?.id,
+        image:data?.images[0].url
+    }
+    dispatch({ type: reducerCases.SET_USER, user});
 };
         getUser();
     },[token,dispatch]);

@@ -1,3 +1,4 @@
+// sp.js (StateProvider file)
 import { createContext, useReducer, useContext } from 'react';
 import reducer, { initialState } from './reducer';
 

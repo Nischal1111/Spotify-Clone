@@ -6,12 +6,11 @@ import axios from 'axios';
 import "../css/main.css";
 import styled from "styled-components";
 import Side from './side';
-import StateProvider, { useStateProvider } from './sp';
+import { useStateProvider } from './sp';
 import { reducerCases } from './constants';
 
 const Spotify = () => {
   const [{ token }, dispatch] = useStateProvider();
-
 
   useEffect(() => {
     const getUser = async () => {
@@ -33,7 +32,6 @@ const Spotify = () => {
   }, [token, dispatch]);
 
   return (
-    <StateProvider>
       <Container>
         <div className="spotify--body">
           <Side />
@@ -48,7 +46,6 @@ const Spotify = () => {
           <Footer />
         </div>
       </Container>
-    </StateProvider>
   );
 };
 

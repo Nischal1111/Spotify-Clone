@@ -1,6 +1,46 @@
 .playlist{
-    margin: 0rem 2rem;
+    margin: 0rem 3rem;
     display: flex;
     align-items: center;
     gap: 2rem;
 }
+.icons--body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.icons--body .MuiSvgIcon-root {
+    margin-right: 20px;
+    color: #1ed15e;
+}
+.icons--body .player {
+    font-size: 60px !important;
+    margin: 0px 20px 2px 50px;
+    color: #1ed15e;
+}
+.name{
+    font-size: 100px;
+    color: aliceblue;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.desc{
+    font-size: 18px;
+    color: rgb(163, 167, 170);
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #e0dede;
+}
+.detail .title{
+    font-size: 5rem;
+    color: white;
+}
+.listlist .header{
+    display: grid;
+    grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
+    color: aliceblue;
+}   

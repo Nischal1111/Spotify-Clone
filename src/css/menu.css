@@ -18,7 +18,6 @@
 }
 .list:hover{
     color: white;
-    transform: scale(1.05);
     transition: .4s  all;
 }
 .menu:hover {

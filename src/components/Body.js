@@ -12,6 +12,11 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 const Body = () => {
   const [{ token, selectedPlaylistId, selectedplaylist }, dispatch] = useStateProvider();
 
+  const minutes=(ms)=>{
+    const mins=Math.floor(ms/60000)
+    const secs=((ms%60000)/1000).toFixed(0)
+    return mins+ ":" + (secs < 10? "0":""+secs)
+  }
   useEffect(() => {
     const getInitialPlaylist = async () => {
       const response = await axios.get(`https://api.spotify.com/v1/playlists/${selectedPlaylistId}`, {
@@ -78,9 +83,10 @@ const Body = () => {
                 <span>ALBUM</span>
               </div>
               <div className="col">
-                <span><AiFillClockCircle /></span>
+                <span><AiFillClockCircle style={{fontSize:"22px"}}/></span>
               </div>
             </div>
+            <hr style={{width:"95%",marginLeft:"1.5rem",marginBottom:"1rem",marginTop:"-.5rem"}}></hr>
             <div className="track">
               {selectedplaylist.tracks.map(({ id, name, artists, image, album, duration, context_uri, track_number }, index) => {
                 return (
@@ -88,20 +94,20 @@ const Body = () => {
                     <div className="col">
                       <span>{index + 1}</span>
                     </div>
-                    <div className="col desc">
+                    <div className="col desc" style={{display:"flex", alignItems:"center"}}>
                       <div className="image">
-                        <img src={image} alt="Track Cover" />
+                        <img src={image} alt="Track Cover" style={{height:"40px"}}/>
                       </div>
-                      <div className="info">
+                      <div className="info" style={{marginLeft:"2rem",color:"aliceblue",display:"flex",flexDirection:"column"}}>
                         <span>{name}</span>
-                        <span>{artists}</span>
+                        <span style={{fontSize:"13px",marginTop:"7px",color:" rgb(183, 181, 181)"}}>{artists}</span>
                       </div>
                     </div>
                     <div className="col">
                       <span>{album}</span>
                     </div>
                     <div className="col">
-                      <span>{duration}</span>
+                      <span>{minutes(duration)}</span>
                     </div>
                   </div>
                 );

@@ -13,11 +13,14 @@
         height: 46px;
         font-weight: 300;
         letter-spacing: 1px;
+        padding: 0rem .7rem;
+        border-radius: 8px;
         cursor: pointer;
         margin-left: .7rem;
 }
 .list:hover{
     color: white;
+    background-color:rgb(61, 61, 61);
     transition: .4s  all;
 }
 .menu:hover {
@@ -47,7 +50,7 @@
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
 }
 .menu h4{
     font-weight: 200;

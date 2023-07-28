@@ -100,7 +100,7 @@ const Body = () => {
                       </div>
                       <div className="info" style={{marginLeft:"2rem",color:"aliceblue",display:"flex",flexDirection:"column"}}>
                         <span>{name}</span>
-                        <span style={{fontSize:"13px",marginTop:"7px",color:" rgb(183, 181, 181)"}}>{artists}</span>
+                        <span style={{fontSize:"13px",marginTop:"7px",color:" rgb(183, 181, 181)"}}>{artists.join(" , ")}</span>
                       </div>
                     </div>
                     <div className="col">

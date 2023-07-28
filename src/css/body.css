@@ -67,6 +67,7 @@
 
 .row {
     padding: 1rem 1.2rem;
+    cursor: pointer;
     border-radius: 8px;
     display: grid;
     grid-template-columns: 0.15fr 2.7fr 1.67fr .3fr;

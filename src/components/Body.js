@@ -42,8 +42,6 @@ const Body = () => {
           track_number: track.track_number,
         })),
       };
-
-      console.log(selectedplaylist.name);
       dispatch({ type: reducerCases.SET_PLAYLIST, selectedplaylist });
     };
 

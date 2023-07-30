@@ -11,3 +11,19 @@
     padding: 0rem 1rem;
     grid-template-columns: 1fr 2fr 1fr;
 }
+.song{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.info__song{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.info__song h4{
+    color: aliceblue;
+}
+.info__song h6{
+    color: aliceblue;
+}

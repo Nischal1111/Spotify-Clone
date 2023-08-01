@@ -33,7 +33,7 @@ import "../css/footer.css"
       {currentlyPlaying && (
         <div className="song">
             <div className="image">
-                <img src={currentlyPlaying.image} style={{objectFit:"cover",height:"60px"}}
+                <img src={currentlyPlaying.image} style={{objectFit:"cover",height:"50px"}}
                 />
             </div>
             <div className="info__song">
@@ -42,6 +42,7 @@ import "../css/footer.css"
                     {currentlyPlaying.artists.join(",")}
                 </h6>
             </div>
+            <h1></h1>
         </div>
       )}
     </div>

@@ -42,7 +42,6 @@ import "../css/footer.css"
                     {currentlyPlaying.artists.join(",")}
                 </h6>
             </div>
-            <h1></h1>
         </div>
       )}
     </div>

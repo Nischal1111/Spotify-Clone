@@ -4,4 +4,5 @@ export const reducerCases = {
     SET_PLAYLIST:"SET_PLAYLIST",
     SET_USER:"SET_USER",
     SET_PLAYING:"SET_PLAYING",
+    SET_PLAYER_STATE:"SET_PLAYER_STATE",
 }

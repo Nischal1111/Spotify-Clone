@@ -27,3 +27,15 @@
 .info__song h6{
     color: aliceblue;
 }
+svg{
+    color: #1ed15e;
+    transition: .4s ease-in-out;
+
+}
+svg:hover{
+    color: #0dcf51;
+}
+.prev--,.next--,.play--{
+    font-size: 2rem;
+    margin: 0rem 1.5rem;
+}

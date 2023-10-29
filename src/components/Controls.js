@@ -9,13 +9,29 @@ import { useStateProvider } from './sp';
 export default function Controls() {
     const [{token,PlayerState},dispatch] = useStateProvider();
     const changetrack =async(type)=>{
-      const response = await axios.get(`https://api.spotify.com/v1/me/player/${type}`, {
+      await axios.post(`https://api.spotify.com/v1/me/player/${type}`, {
         headers: {
           Authorization: 'Bearer ' + token,
           'Content-Type': 'application/json',
         },
       });
-      dispatch({ type: reducerCases.PlayerState, PlayerState});
+      const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
+        headers: {
+          Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response!==""){
+        const {item}=response.data
+        const currentlyPlaying={
+            id:item.id,
+            name:item.name,
+            artists:item.artists.map((artist)=>artist.name),
+            image:item.album.images[0].url
+        }
+        dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying});
+      }
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying:null});
     }
 
   return (
@@ -24,7 +40,7 @@ export default function Controls() {
         <BsShuffle/>
       </div>
       <div className='prev--'>
-        <CgPlayTrackPrev onClick={changetrack(type)}/>
+        <CgPlayTrackPrev onClick={changetrack('previous')}/>
       </div>
       <div className='play--'>
         {PlayerState ? <BsFillPauseCircleFill/>: <BsFillPlayCircleFill/>}

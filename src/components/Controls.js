@@ -11,8 +11,6 @@ export default function Controls() {
 
   // Function to change the track
   const changeTrack = async (type) => {
-    try {
-      // Send a request to change the track
       await axios.post(`https://api.spotify.com/v1/me/player/${type}`, {}, {
         headers: {
           Authorization: 'Bearer ' + token,
@@ -40,10 +38,7 @@ export default function Controls() {
       } else {
         dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null });
       }
-    } catch (error) {
-      console.error('Error changing track:', error);
     }
-  }
 
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>

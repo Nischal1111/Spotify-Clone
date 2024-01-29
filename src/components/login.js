@@ -17,7 +17,7 @@ const Login = () => {
     "user-read-playback-position",
     "user-top-read",
     ]
-    window.location.href=`${autorizeUrl}?client_id=${clientid}&redirect_uri=${redirect}&scope=${scopes.join(" ")}&response_type=token&show_dialog=true`
+    window.location.href=`${autorizeUrl}?client_id=${clientid}&redirect_uri=${redirect}&scope=${encodeURIComponent(scopes)}&response_type=token&show_dialog=true`
     }
     return (
     <div className='login'>

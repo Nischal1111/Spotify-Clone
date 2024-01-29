@@ -1,7 +1,7 @@
 import {reducerCases} from "./constants"
 
 export const initialState = {
-  token: null,
+  token:null,
   user: null,
   playlists: [],
   selectedPlaylistId: "73uqBsL58hvh5Tgarkvu6d", 

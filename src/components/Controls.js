@@ -11,34 +11,39 @@ export default function Controls() {
 
   // Function to change the track
   const changeTrack = async (type) => {
-      await axios.post(`https://api.spotify.com/v1/me/player/${type}`, {}, {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      });
+  try {
+    await axios.post(`https://api.spotify.com/v1/me/player/${type}`, {}, {
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+    });
 
-      // Retrieve the currently playing track
-      const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      });
+    const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+    });
 
-      if (response.data.item) {
-        const { item } = response.data;
-        const currentlyPlaying = {
-          id: item.id,
-          name: item.name,
-          artists: item.artists.map((artist) => artist.name),
-          image: item.album.images[0].url,
-        };
-        dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
-      } else {
-        dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null });
-      }
+    if (response.data.item) {
+      const { item } = response.data;
+      const currentlyPlaying = {
+        id: item.id,
+        name: item.name,
+        artists: item.artists.map((artist) => artist.name),
+        image: item.album.images[0].url,
+      };
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
+    } else {
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null });
     }
+  } catch (error) {
+    console.error('Error changing track:', error);
+    // Handle the error here (e.g., display an error message, retry logic, etc.)
+  }
+};
+
 
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>

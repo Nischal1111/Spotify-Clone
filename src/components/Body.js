@@ -9,7 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 
-//Main Body
+//Main 
 const Body = () => {
   const [{ token, selectedPlaylistId, selectedplaylist }, dispatch] = useStateProvider();
 
